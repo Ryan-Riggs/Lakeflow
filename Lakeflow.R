@@ -169,7 +169,8 @@ while(rows<total){
     rows = rows +1
   } else{next}
 }
-
+t = 100
+outputs = outputs[1:t,]
 total = t
 rows = 0
 while(rows<total){
@@ -191,8 +192,6 @@ while(rows<total){
     rows = rows +1
   } else{next}
 }
-t = 100
-outputs = outputs[1:100,]
 total = t
 rows = 0
 while(rows<total){
@@ -235,8 +234,8 @@ while(rows<total){
     rows = rows +1
   } else{next}
 }
-t = 20
-outputs = outputs[1:20,]
+t = 10
+outputs = outputs[1:t,]
 total = t
 rows = 0
 while(rows<total){
