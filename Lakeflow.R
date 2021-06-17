@@ -2,23 +2,6 @@ library(dplyr)
 ################################################################
 ##Read in data. 
 ################################################################
-# times = as.vector(1)
-# tm = 45
-# ##Function to cause a restart of the algorithm if it takes too long. Needed to account for instances where true observations are filtered out causing an issue in the final stages of refining. 
-# try_with_time_limit <- function(expr, cpu = Inf, elapsed = Inf)
-# {
-#   y <- try({setTimeLimit(cpu, elapsed); expr}, silent = TRUE) 
-#   if(inherits(y, "try-error")) repeat(expr) else y 
-# }
-# try_with_time_limit <- function(expr, cpu = Inf, elapsed = Inf)
-# {
-#   y <- try({setTimeLimit(cpu, elapsed);expr}, silent = TRUE) 
-#   if(inherits(y, "try-error")) repeat(try_with_time_limit(expr, tm)) else y 
-# }
-# 
-# for(i in 1:length(times)){
-# try_with_time_limit(
-#   for(j in 1:1){
 data = readxl::read_xlsx("E:\\research\\RivLake\\mohave_pseudo_5yr_20210602.xlsx")
 data$datetime = as.Date(data$datetime)
 data = data[data$datetime>as.Date("2010-09-30"),]
@@ -257,11 +240,10 @@ while(rows<total){
     rows = rows +1
   } else{next}
 }
-#}, tm)
+
   end = Sys.time()
   start - end
-  #times[i] = start-end
-  #}
+
 ########################################################################################################################################
 ##Check out the outputs df, should be nearly all correct values. 
 ########################################################################################################################################
